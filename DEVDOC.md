@@ -85,7 +85,7 @@
     - 大多数情况下这里的触发器分数必须是独一无二的
     - 建议使用`>10000`的随机数作为自定义按钮的触发器分数
 2. 在[`#fzsd:module/interactor/event/on_display`](data/fzsd/tags/functions/module/interactor/display.json)标签中注册上述函数
-3. 定义一个点击按钮时执行的函数，使用形如`execute if score @s fzsd.module.interactor.trigger matches <min>..<max> run ...`的指令判断玩家的触发器分数，并执行你的操作
+3. 定义一个點击按钮时执行的函数，使用形如`execute if score @s fzsd.module.interactor.trigger matches <min>..<max> run ...`的指令判断玩家的触发器分数，并执行你的操作
 4. 在[`#fzsd:module/interactor/event/on_click`](data/fzsd/tags/functions/module/interactor/event/on_click.json)标签中注册上述函数
 
 #### 其他标签
