@@ -197,7 +197,7 @@ get_server_whitelist() -> (
 
 // 重載設定檔
 reload_configs() -> (
-    // 读取配置文件
+    // 讀取設定檔
     global_config = read_file('config', 'json');
     if(global_config == null, // carpet 1.4.69 相容
         global_config = {};
@@ -232,7 +232,7 @@ get_scoreboard_player_list() -> (
     return(keys(set));
 );
 
-// 嘗試從快取恢復玩家隊伍，玩家/假人上下線時執行
+// 嘗試從緩存玩家恢復隊伍，玩家/假人上線時執行
 try_restore_team_from_cache(player) -> (
     player_team = player ~ 'team';
     player_name = player ~ 'name';
@@ -327,7 +327,7 @@ _recalculate_general(scoreboard_id) -> (
 
 // 使用資料包函數標籤將總分賦值到顯示計分板上
 display_generals() -> (
-    // 執行函數，將分數賦值到顯示計分板上
+    // 執行函數，將分數評分到顯示計分上方
     run('function #fzsd:module/scoreboard/assign/scoreboard/general');
 );
 
@@ -423,7 +423,7 @@ _restore_score(player_name, scoreboard_id) -> (
             scoreboard(scoreboard_id, player, 0);
             for(block_list(), append_from_stat(scoreboard_id, player, 'used', _));
         ),
-        print('未识别的計分板ID！' + scoreboard_id);
+        print('未識別的計分板ID！' + scoreboard_id);
         return(false);
     );
     if(player_is_offline,
